@@ -11,7 +11,7 @@ export default function LoginPage() {
   const router = useRouter();
   const { login, switchPersona } = useAuth();
 
-  const [email, setEmail] = useState('officer@aquavision.gov.in');
+  const [email, setEmail] = useState('officer@terraalert.gov.in');
   const [password, setPassword] = useState('officer123');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -31,13 +31,13 @@ export default function LoginPage() {
   const handleQuickLogin = (role: UserRole) => {
     switchPersona(role);
     if (role === 'admin') {
-      setEmail('admin@aquavision.gov.in');
+      setEmail('admin@terraalert.gov.in');
       setPassword('admin123');
     } else if (role === 'officer') {
-      setEmail('officer@aquavision.gov.in');
+      setEmail('officer@terraalert.gov.in');
       setPassword('officer123');
     } else {
-      setEmail('citizen@aquavision.gov.in');
+      setEmail('citizen@terraalert.gov.in');
       setPassword('citizen123');
     }
     router.push('/dashboard');
@@ -53,7 +53,7 @@ export default function LoginPage() {
             <ShieldAlert className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-black text-slate-900">
-            AquaVision Portal Sign In
+            TerraAlert Portal Sign In
           </h2>
           <p className="text-xs text-slate-600 font-medium">
             National Landslide Early Warning & Risk Management Network

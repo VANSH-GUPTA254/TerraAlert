@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
                 <ShieldAlert className="w-5 h-5" />
               </div>
               <span className="text-xl font-black text-slate-900 tracking-tight">
-                Aqua<span className="text-blue-600">Vision</span>
+                Terra<span className="text-blue-600">Alert</span>
               </span>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright */}
         <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
           <div>
-            AquaVision – Smart India Hackathon 2024-2026 | Problem Statement <strong className="text-slate-800">SIH26001</strong>
+            TerraAlert – Smart India Hackathon 2024-2026 | Problem Statement <strong className="text-slate-800">SIH26001</strong>
           </div>
           <div>
             Designed for Citizens, Field Volunteers & Disaster Management Authorities

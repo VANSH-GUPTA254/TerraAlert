@@ -1,7 +1,7 @@
-# AquaVision – AI-Based Landslide Early Warning & Risk Monitoring System
+# TerraAlert – AI-Based Landslide Early Warning & Risk Monitoring System
 ### Smart India Hackathon (SIH) – Problem Statement SIH26001
 
-**AquaVision** is a production-ready, full-stack disaster management and early warning web platform engineered for hill citizens, field volunteers (Aapda Mitra), State Disaster Management Authorities (SDMA), and the National Disaster Management Authority (NDMA HQ).
+**TerraAlert** is a production-ready, full-stack disaster management and early warning web platform engineered for hill citizens, field volunteers (Aapda Mitra), State Disaster Management Authorities (SDMA), and the National Disaster Management Authority (NDMA HQ).
 
 ---
 
@@ -81,9 +81,9 @@ npm run dev
 ---
 
 ## 👥 Demo Personas (1-Click Switchers)
-- **Disaster Officer**: `officer@aquavision.gov.in` (Kerala SDMA / Wayanad EOC)
-- **System Admin**: `admin@aquavision.gov.in` (NDMA HQ National EOC)
-- **Citizen / Volunteer**: `citizen@aquavision.gov.in` (Aapda Mitra Chamoli)
+- **Disaster Officer**: `officer@terraalert.gov.in` (Kerala SDMA / Wayanad EOC)
+- **System Admin**: `admin@terraalert.gov.in` (NDMA HQ National EOC)
+- **Citizen / Volunteer**: `citizen@terraalert.gov.in` (Aapda Mitra Chamoli)
 
 ---
 

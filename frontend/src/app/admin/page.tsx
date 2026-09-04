@@ -409,7 +409,7 @@ export default function AdminPage() {
                 Admin HQ
               </span>
               <p className="font-black text-sm text-slate-900">Dr. Rajeshwar Sharma</p>
-              <p className="text-slate-600 font-medium">admin@aquavision.gov.in</p>
+              <p className="text-slate-600 font-medium">admin@terraalert.gov.in</p>
               <p className="text-blue-600 text-xs font-semibold">NDMA National Command</p>
             </div>
 
@@ -418,7 +418,7 @@ export default function AdminPage() {
                 Disaster Officer
               </span>
               <p className="font-black text-sm text-slate-900">Ananya Nair</p>
-              <p className="text-slate-600 font-medium">officer@aquavision.gov.in</p>
+              <p className="text-slate-600 font-medium">officer@terraalert.gov.in</p>
               <p className="text-blue-600 text-xs font-semibold">Kerala SDMA (Wayanad Sector)</p>
             </div>
 
@@ -427,7 +427,7 @@ export default function AdminPage() {
                 Citizen Volunteer
               </span>
               <p className="font-black text-sm text-slate-900">Vikram Singh Negi</p>
-              <p className="text-slate-600 font-medium">citizen@aquavision.gov.in</p>
+              <p className="text-slate-600 font-medium">citizen@terraalert.gov.in</p>
               <p className="text-blue-600 text-xs font-semibold">Aapda Mitra (Joshimath Sector)</p>
             </div>
           </div>

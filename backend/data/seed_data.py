@@ -5,7 +5,7 @@ SEED_USERS = [
     {
         "id": "usr-001",
         "name": "Dr. Rajeshwar Sharma",
-        "email": "admin@aquavision.gov.in",
+        "email": "admin@terraalert.gov.in",
         "password_hash": "$2b$12$K8qE2gZ3pX9Y5wR1uI0t4u4B0q.Z1W1Q8Q2W3E4R5T6Y7U8I9O0P1",  # "admin123"
         "role": "admin",
         "phone": "+91 98110 24890",
@@ -16,7 +16,7 @@ SEED_USERS = [
     {
         "id": "usr-002",
         "name": "Ananya Nair (SDMA Officer)",
-        "email": "officer@aquavision.gov.in",
+        "email": "officer@terraalert.gov.in",
         "password_hash": "$2b$12$K8qE2gZ3pX9Y5wR1uI0t4u4B0q.Z1W1Q8Q2W3E4R5T6Y7U8I9O0P1",  # "officer123"
         "role": "officer",
         "phone": "+91 94471 88203",
@@ -27,7 +27,7 @@ SEED_USERS = [
     {
         "id": "usr-003",
         "name": "Vikram Singh Negi",
-        "email": "citizen@aquavision.gov.in",
+        "email": "citizen@terraalert.gov.in",
         "password_hash": "$2b$12$K8qE2gZ3pX9Y5wR1uI0t4u4B0q.Z1W1Q8Q2W3E4R5T6Y7U8I9O0P1",  # "citizen123"
         "role": "citizen",
         "phone": "+91 87552 19044",

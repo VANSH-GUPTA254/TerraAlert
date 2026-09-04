@@ -2,7 +2,7 @@ export type Language = 'en' | 'hi';
 
 export const translations = {
   en: {
-    brand: "AquaVision",
+    brand: "TerraAlert",
     subBrand: "National Landslide Early Warning & Risk Intelligence System",
     govBadge: "Government of India | NDMA / SDMA Network",
     emergencyHelpline: "Emergency Control: 1070 | State Disaster: 1077 | Police/Ambulance: 112",
@@ -43,7 +43,7 @@ export const translations = {
     }
   },
   hi: {
-    brand: "एक्वाविज़न (AquaVision)",
+    brand: "टेराअलर्ट (TerraAlert)",
     subBrand: "राष्ट्रीय भूस्खलन पूर्व चेतावनी एवं जोखिम निगरानी प्रणाली",
     govBadge: "भारत सरकार | राष्ट्रीय आपदा प्रबंधन प्राधिकरण (NDMA)",
     emergencyHelpline: "आपातकालीन नियंत्रण: 1070 | राज्य आपदा: 1077 | आपातकाल: 112",

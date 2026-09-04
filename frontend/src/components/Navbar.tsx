@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
             <div>
               <div className="flex items-center space-x-2">
                 <span className="text-xl font-black tracking-tight text-slate-900">
-                  Aqua<span className="text-blue-600">Vision</span>
+                  Terra<span className="text-blue-600">Alert</span>
                 </span>
                 <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 rounded-md border border-blue-200">
                   SIH26001

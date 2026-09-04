@@ -7,7 +7,7 @@ from data.seed_data import (
     SEED_MONTHLY_INCIDENTS, SEED_RAINFALL_VS_MOISTURE, SEED_FORECAST_72H
 )
 
-class AquaVisionDB:
+class TerraAlertDB:
     def __init__(self):
         self.users: List[Dict[str, Any]] = list(SEED_USERS)
         self.hotspots: List[Dict[str, Any]] = list(SEED_HOTSPOTS)
@@ -148,4 +148,4 @@ class AquaVisionDB:
             "forecast_72h": self.forecast_72h
         }
 
-db = AquaVisionDB()
+db = TerraAlertDB()

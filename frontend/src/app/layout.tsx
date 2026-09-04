@@ -6,7 +6,7 @@ import { EmergencyBanner } from '@/components/EmergencyBanner';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'AquaVision | AI-Based Landslide Early Warning & Risk Monitoring (SIH26001)',
+  title: 'TerraAlert | AI-Based Landslide Early Warning & Risk Monitoring (SIH26001)',
   description: 'Production-ready AI landslide risk monitoring, early warning forecasting, crowd incident triage, and GIS spatial intelligence platform for Smart India Hackathon.',
   keywords: 'Landslide Early Warning, SIH26001, AI Disaster Management, NDMA, SDMA, IoT Telemetry, Slope Stability',
 };

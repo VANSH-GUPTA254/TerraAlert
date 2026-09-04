@@ -39,7 +39,7 @@ export default function RegisterPage() {
             <UserPlus className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-black text-slate-900">
-            Register for AquaVision
+            Register for TerraAlert
           </h2>
           <p className="text-xs text-slate-600 font-medium">
             Create an early warning and disaster response account

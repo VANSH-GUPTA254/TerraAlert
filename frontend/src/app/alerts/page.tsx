@@ -303,7 +303,7 @@ export default function AlertsPage() {
 {`<?xml version="1.0" encoding="UTF-8"?>
 <alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
   <identifier>${selectedCapAlert?.cap_identifier || 'URN:IN-GOV:NDMA:CAP:20260904:WAYANAD-RED'}</identifier>
-  <sender>ndma-eoc@aquavision.gov.in</sender>
+  <sender>ndma-eoc@terraalert.gov.in</sender>
   <status>Actual</status>
   <msgType>Alert</msgType>
   <scope>Public</scope>

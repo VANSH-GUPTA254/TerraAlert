@@ -65,7 +65,7 @@ export default function ForgotPasswordPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="officer@aquavision.gov.in"
+                  placeholder="officer@terraalert.gov.in"
                   className="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-9 pr-3 text-xs font-bold text-slate-900 outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>

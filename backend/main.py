@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routes import auth, predictions, incidents, alerts, sensors, analytics
 
 app = FastAPI(
-    title="AquaVision AI - Early Warning & Landslide Risk Monitoring Engine",
+    title="TerraAlert AI - Early Warning & Landslide Risk Monitoring Engine",
     description="Backend API services for SIH26001 Landslide Early Warning and Risk Monitoring System",
     version="2.0.0",
     docs_url="/docs",
@@ -30,7 +30,7 @@ app.include_router(analytics.router, prefix="/api")
 @app.get("/")
 def root_status():
     return {
-        "platform": "AquaVision SIH26001",
+        "platform": "TerraAlert SIH26001",
         "status": "OPERATIONAL",
         "version": "2.0.0",
         "emergency_helpline": {
@@ -45,7 +45,7 @@ def root_status():
 def health_check():
     return {
         "status": "healthy",
-        "engine": "AquaVision AI v2.0",
+        "engine": "TerraAlert AI v2.0",
         "geotechnical_model": "Hydro-Geomechanical Infinite Slope Stability + Random Forest Calibrator",
         "cap_version": "OASIS CAP 1.2 Compliant"
     }

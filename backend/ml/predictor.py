@@ -5,7 +5,7 @@ from schemas import PredictionInput, PredictionOutput, FeatureImportanceItem
 
 class LandslideRiskAI:
     """
-    AI Risk Prediction Engine for AquaVision.
+    AI Risk Prediction Engine for TerraAlert.
     Combines hydro-geotechnical Infinite Slope Stability mechanics with 
     multi-parametric calibrated hazard modeling and explainable AI metrics.
     """

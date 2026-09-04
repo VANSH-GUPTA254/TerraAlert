@@ -23,7 +23,7 @@ const DEMO_PERSONAS: Record<UserRole, User> = {
   officer: {
     id: 'usr-002',
     name: 'Ananya Nair (SDMA Officer)',
-    email: 'officer@aquavision.gov.in',
+    email: 'officer@terraalert.gov.in',
     role: 'officer',
     phone: '+91 94471 88203',
     department: 'Kerala State Disaster Management Authority (KSDMA)',
@@ -32,7 +32,7 @@ const DEMO_PERSONAS: Record<UserRole, User> = {
   admin: {
     id: 'usr-001',
     name: 'Dr. Rajeshwar Sharma (NDMA HQ)',
-    email: 'admin@aquavision.gov.in',
+    email: 'admin@terraalert.gov.in',
     role: 'admin',
     phone: '+91 98110 24890',
     department: 'National Disaster Management Authority (NDMA)',
@@ -41,7 +41,7 @@ const DEMO_PERSONAS: Record<UserRole, User> = {
   citizen: {
     id: 'usr-003',
     name: 'Vikram Singh Negi (Field Worker)',
-    email: 'citizen@aquavision.gov.in',
+    email: 'citizen@terraalert.gov.in',
     role: 'citizen',
     phone: '+91 87552 19044',
     department: 'Aapda Mitra Volunteer - Chamoli Sector',

@@ -10,7 +10,9 @@ def login(credentials: UserLogin):
     user = db.find_user_by_email(credentials.email)
     if not user:
         # In demo mode, if matching predefined sample accounts or password matches demo
-        if credentials.email in ["admin@aquavision.gov.in", "officer@aquavision.gov.in", "citizen@aquavision.gov.in"]:
+        if credentials.email in [
+            "admin@terraalert.gov.in", "officer@terraalert.gov.in", "citizen@terraalert.gov.in"
+        ]:
             role = "admin" if "admin" in credentials.email else ("officer" if "officer" in credentials.email else "citizen")
             name = "Disaster Admin" if role == "admin" else ("SDMA Officer" if role == "officer" else "Field Citizen")
             user = db.create_user({
@@ -24,10 +26,10 @@ def login(credentials: UserLogin):
         else:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid email or password. You may use demo accounts: admin@aquavision.gov.in, officer@aquavision.gov.in, citizen@aquavision.gov.in"
+                detail="Invalid email or password. You may use demo accounts: admin@terraalert.gov.in, officer@terraalert.gov.in, citizen@terraalert.gov.in"
             )
 
-    token = f"aqv_{secrets.token_hex(24)}"
+    token = f"terra_{secrets.token_hex(24)}"
     return TokenResponse(
         access_token=token,
         token_type="bearer",

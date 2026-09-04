@@ -311,7 +311,7 @@ export default function HomePage() {
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold border border-blue-200">
               <BrainCircuit className="w-3.5 h-3.5 text-blue-600" />
-              <span>How AquaVision AI Works</span>
+              <span>How TerraAlert AI Works</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
               5 Key Signs We Analyze to <span className="text-blue-600">Predict Landslides</span>
