@@ -4,7 +4,7 @@ from routes import auth, predictions, incidents, alerts, sensors, analytics
 
 app = FastAPI(
     title="TerraAlert AI - Early Warning & Landslide Risk Monitoring Engine",
-    description="Backend API services for SIH26001 Landslide Early Warning and Risk Monitoring System",
+    description="Backend API services for Landslide Early Warning and Risk Monitoring System",
     version="2.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
@@ -30,7 +30,7 @@ app.include_router(analytics.router, prefix="/api")
 @app.get("/")
 def root_status():
     return {
-        "platform": "TerraAlert SIH26001",
+        "platform": "TerraAlert ",
         "status": "OPERATIONAL",
         "version": "2.0.0",
         "emergency_helpline": {
