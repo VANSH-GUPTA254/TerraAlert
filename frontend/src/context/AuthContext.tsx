@@ -17,6 +17,7 @@ interface AuthContextType {
   login: (email: string, role?: UserRole) => void;
   switchPersona: (role: UserRole) => void;
   logout: () => void;
+  isAuthenticated: boolean;
 }
 
 const DEMO_PERSONAS: Record<UserRole, User> = {
@@ -29,6 +30,7 @@ const DEMO_PERSONAS: Record<UserRole, User> = {
     department: 'Kerala State Disaster Management Authority (KSDMA)',
     jurisdiction_district: 'Wayanad & Idukki Districts'
   },
+
   admin: {
     id: 'usr-001',
     name: 'Dr. Rajeshwar Sharma (NDMA HQ)',
@@ -38,6 +40,7 @@ const DEMO_PERSONAS: Record<UserRole, User> = {
     department: 'National Disaster Management Authority (NDMA)',
     jurisdiction_district: 'National Command / All State EOCs'
   },
+
   citizen: {
     id: 'usr-003',
     name: 'Vikram Singh Negi (Field Worker)',
@@ -51,23 +54,30 @@ const DEMO_PERSONAS: Record<UserRole, User> = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(DEMO_PERSONAS.officer);
+export const AuthProvider: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
   const [language, setLanguageState] = useState<Language>('en');
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-  const [sirenActive, setSirenActive] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState(false);
+  const [sirenActive, setSirenActive] = useState(false);
 
   useEffect(() => {
-    // Check saved preferences
     const savedRole = localStorage.getItem('aqv_role') as UserRole;
+
     if (savedRole && DEMO_PERSONAS[savedRole]) {
       setUser(DEMO_PERSONAS[savedRole]);
     }
-    const savedLang = localStorage.getItem('aqv_lang') as Language;
-    if (savedLang) setLanguageState(savedLang);
 
-    const savedTheme = localStorage.getItem('aqv_dark') === 'true';
-    if (savedTheme) {
+    const savedLang = localStorage.getItem('aqv_lang') as Language;
+
+    if (savedLang) {
+      setLanguageState(savedLang);
+    }
+
+    const savedTheme = localStorage.getItem('aqv_dark');
+
+    if (savedTheme === 'true') {
       setDarkMode(true);
       document.documentElement.classList.add('dark');
     }
@@ -79,36 +89,49 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(prev => {
-      const next = !prev;
-      localStorage.setItem('aqv_dark', String(next));
-      if (next) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-      return next;
-    });
+    const next = !darkMode;
+
+    setDarkMode(next);
+    localStorage.setItem('aqv_dark', String(next));
+
+    if (next) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   };
 
   const toggleSiren = () => {
     if (sirenEngine) {
-      const isRunning = sirenEngine.toggle();
-      setSirenActive(isRunning);
+      const running = sirenEngine.toggle();
+      setSirenActive(running);
     } else {
       setSirenActive(prev => !prev);
     }
   };
 
   const login = (email: string, role?: UserRole) => {
-    const targetRole = role || (email.includes('admin') ? 'admin' : (email.includes('officer') ? 'officer' : 'citizen'));
-    const persona = DEMO_PERSONAS[targetRole];
+    let selectedRole: UserRole;
+
+    if (role) {
+      selectedRole = role;
+    } else if (email.includes('admin')) {
+      selectedRole = 'admin';
+    } else if (email.includes('officer')) {
+      selectedRole = 'officer';
+    } else {
+      selectedRole = 'citizen';
+    }
+
+    const persona = DEMO_PERSONAS[selectedRole];
+
     setUser(persona);
-    localStorage.setItem('aqv_role', targetRole);
+    localStorage.setItem('aqv_role', selectedRole);
   };
 
   const switchPersona = (targetRole: UserRole) => {
     const persona = DEMO_PERSONAS[targetRole];
+
     setUser(persona);
     localStorage.setItem('aqv_role', targetRole);
   };
@@ -116,6 +139,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logout = () => {
     setUser(null);
     localStorage.removeItem('aqv_role');
+    window.location.href = '/login';
   };
 
   return (
@@ -131,7 +155,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         toggleSiren,
         login,
         switchPersona,
-        logout
+        logout,
+        isAuthenticated: !!user
       }}
     >
       {children}
@@ -141,6 +166,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context) throw new Error('useAuth must be used within an AuthProvider');
+
+  if (!context) {
+    throw new Error('useAuth must be used within AuthProvider');
+  }
+
   return context;
 };

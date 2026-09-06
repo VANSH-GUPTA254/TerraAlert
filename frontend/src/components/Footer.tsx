@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-slate-50 text-slate-800 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Col 1: Brand & Mission */}
@@ -27,8 +27,8 @@ export const Footer: React.FC = () => {
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
               {language === 'en'
-                ? 'AI-Powered Landslide Early Warning and Geotechnical Risk Monitoring System engineered for the Smart India Hackathon (SIH26001).'
-                : 'स्मार्ट इंडिया हैकाथॉन (SIH26001) हेतु विकसित एआई-संचालित भूस्खलन पूर्व चेतावनी एवं जोखिम निगरानी प्रणाली।'}
+                ? 'AI-Powered Landslide Early Warning and Geotechnical Risk Monitoring System.'
+                : 'विकसित एआई-संचालित भूस्खलन पूर्व चेतावनी एवं जोखिम निगरानी प्रणाली।'}
             </p>
             <div className="flex items-center space-x-2 text-[11px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-lg w-fit">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright */}
         <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
           <div>
-            TerraAlert – Smart India Hackathon 2024-2026 | Problem Statement <strong className="text-slate-800">SIH26001</strong>
+            TerraAlert<strong className="text-slate-800">1</strong>
           </div>
           <div>
             Designed for Citizens, Field Volunteers & Disaster Management Authorities

@@ -11,57 +11,62 @@ import {
   BarChart3,
   Camera,
   Settings,
-  PhoneCall
+  PhoneCall,
 } from 'lucide-react';
 
 export default function Sidebar() {
   const pathname = usePathname();
 
+  // Hide sidebar on Login & Register pages
+  const authPages = ['/login', '/register'];
+
+  if (authPages.includes(pathname)) {
+    return null;
+  }
+
   const links = [
     {
-      name: 'Overview',
-      href: '/',
-      icon: LayoutDashboard
+      name: 'Dashboard',
+      href: '/dashboard',
+      icon: LayoutDashboard,
     },
     {
       name: 'GIS Map',
-      href: '/dashboard',
-      icon: Map
+      href: '/gis-map',
+      icon: Map,
     },
     {
       name: 'AI Prediction',
       href: '/predict',
-      icon: Brain
+      icon: Brain,
     },
     {
       name: 'Citizen Reports',
       href: '/report',
-      icon: Camera
+      icon: Camera,
     },
     {
       name: 'Alerts',
       href: '/alerts',
-      icon: Bell
+      icon: Bell,
     },
     {
       name: 'Analytics',
       href: '/analytics',
-      icon: BarChart3
+      icon: BarChart3,
     },
     {
       name: 'Operations HQ',
       href: '/admin',
-      icon: Settings
-    }
+      icon: Settings,
+    },
   ];
 
   return (
-    <aside className="w-64 bg-white border-r border-slate-200 h-screen sticky top-0 flex flex-col">
+    <aside className="w-72 h-screen fixed left-0 top-0 bg-white border-r z-50 flex flex-col">
 
       {/* Logo */}
-
       <div className="p-6 border-b">
-
         <div className="flex items-center gap-3">
 
           <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white">
@@ -79,26 +84,26 @@ export default function Sidebar() {
           </div>
 
         </div>
-
       </div>
 
       {/* Menu */}
-
-      <div className="flex-1 p-4">
+      <div className="flex-1 p-4 overflow-y-auto">
 
         <div className="space-y-2">
-
           {links.map((item) => {
             const Icon = item.icon;
-            const active = pathname === item.href;
+
+            const active =
+              pathname === item.href ||
+              (item.href !== '/' && pathname.startsWith(item.href));
 
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all ${
                   active
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-blue-600 text-white shadow-md'
                     : 'text-slate-700 hover:bg-slate-100'
                 }`}
               >
@@ -107,17 +112,14 @@ export default function Sidebar() {
               </Link>
             );
           })}
-
         </div>
 
       </div>
 
       {/* Bottom */}
-
       <div className="p-4 border-t">
 
         <div className="bg-slate-50 rounded-xl p-3 mb-3">
-
           <p className="text-xs text-slate-500">
             Active Role
           </p>
@@ -125,12 +127,11 @@ export default function Sidebar() {
           <p className="font-semibold">
             Disaster Officer
           </p>
-
         </div>
 
         <a
           href="tel:1070"
-          className="flex items-center justify-center gap-2 bg-red-600 text-white rounded-xl py-3 font-bold"
+          className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white rounded-xl py-3 font-bold transition"
         >
           <PhoneCall className="w-4 h-4" />
           SOS 1070
